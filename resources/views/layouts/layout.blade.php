@@ -72,6 +72,9 @@
 					@if (Auth::guest())
 						<button class="download-btn" id="register_btn">Регистрация</button>
 						<button class="features-btn" id="login_btn">Войти</button>
+					@else
+						<button class="download-btn" id="">Профиль</button>
+						<button class="features-btn" id="">Выйти</button>
 					@endif
 				</div>
 				<div class="col-xs-6 banner-img wow fadeInRight animated">
@@ -200,33 +203,32 @@
 		</div>
 	</footer>
 
+
+	<div class="popur_bg"></div>
 	<!-- login form -->
-	<section class="popur_bg">
+	<section id="login_section">
 		<div class="login_block">
 			<div class="close">&#10008;</div>
 			<form method="post" action="{{ route('login') }}" class="login">
 				{{ csrf_field() }}
 				<p>
 				  <label for="login">Логин:</label>
-				  <input type="text" name="login" id="login" value="name@example.com">
+				  <input type="text" name="login" id="login" value="" placeholder="name@example.com">
 				</p>
-
 				<p>
 				  <label for="password">Пароль:</label>
-				  <input type="password" name="password" id="password" value="4815162342">
+				  <input type="password" name="password" id="password" value="">
 				</p>
 
 				<p class="login-submit">
 				  <button type="submit" class="login-button">Войти</button>
 				</p>
-
-				<p class="forgot-password"><a href="index.html">Забыл пароль?</a></p>
+				<p class="forgot-password"><a href="/">Забыл пароль?</a></p>
 			</form>
 		</div>
 	</section>
 	<!-- register form -->
-	<section>
-		<div class="popur_bg2"></div>
+	<section id="register_section">
 		<div class="register_block">
 			<div class="close">&#10008;</div>
 			<form method="post" action="{{ route('register') }}" class="login" style="margin: 75px auto;">
@@ -237,7 +239,7 @@
 				</p>
 				<p>
 				  <label for="email">E-Mail:</label>
-				  <input type="email" name="email" id="email" value="name@example.com">
+				  <input type="email" name="email" id="email" value="" placeholder="name@example.com">
 				</p>
 				@if ($errors->has('email'))
                     <span class="help-block">
@@ -246,11 +248,11 @@
                 @endif
 				<p>
 				  <label for="password_reg">Пароль:</label>
-				  <input type="password" name="password" id="password_reg" value="4815162342">
+				  <input type="password" name="password" id="password_reg" value="">
 				</p>
 				<p>
 				  <label for="password-с">Повторите:</label>
-				  <input type="password" name="password_confirmation" id="passwor-с" value="4815162342">
+				  <input type="password" name="password_confirmation" id="passwor-с" value="">
 				</p>
 				<p class="login-submit">
 				  <button type="submit" class="login-button">Войти</button>
@@ -281,7 +283,7 @@
 
 		login.click(function(){
 			$('.popur_bg').css('display','block');
-
+			$('.login_block').css('display','block');
 			var window_H = $( window ).height();
 			$('.login_block').css('margin_top', window_H+'px');
 		});
@@ -297,17 +299,17 @@
 
 
 		register.click(function(){
-			$('.popur_bg2').css('display','block');
+			$('.popur_bg').css('display','block');
 			$('.register_block').css('display','block');
 			var window_H = $( window ).height();
 			$('.register_block').css('margin_top', window_H+'px');
 		});
-		$('.popur_bg2').click(function(){
-			$('.popur_bg2').css('display','none');
+		$('.popur_bg').click(function(){
+			$('.popur_bg').css('display','none');
 			$('.register_block').css('display','none');
 		});
 		$('.close').click(function(){
-			$('.popur_bg2').css('display','none');
+			$('.popur_bg').css('display','none');
 			$('.register_block').css('display','none');
 		});
     </script>
