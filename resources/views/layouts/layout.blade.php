@@ -12,6 +12,7 @@
 		<link rel="stylesheet" href="{{ asset('/css/responsive.css') }}">
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:600italic,400,800,700,300' rel='stylesheet' type='text/css'>
 		<script src="{{ asset('/js/modernizr.js') }}"></script>
+		<script src="{{ asset('/js/my.js') }}"></script>
 		<!--[if lt IE 9]>
 	      <script src="{{ asset('/js/html5shiv.js') }}"></script>
 	      <script src="{{ asset('/js/respond.min.js') }}"></script>
