@@ -74,8 +74,13 @@
 						<button class="download-btn" id="register_btn">Регистрация</button>
 						<button class="features-btn" id="login_btn">Войти</button>
 					@else
-						<button class="download-btn" id="">Профиль</button>
-						<button class="features-btn" id="">Выйти</button>
+						<div class="form-group">
+							<button class="download-btn" id="profile">Профиль</button>
+							<button class="features-btn" id="logout">Выйти</button>
+							<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+								{{ csrf_field() }}
+							</form>
+						</div>
 					@endif
 				</div>
 				<div class="col-xs-6 banner-img wow fadeInRight animated">
@@ -210,15 +215,15 @@
 	<section id="login_section">
 		<div class="login_block">
 			<div class="close">&#10008;</div>
-			<form method="post" action="{{ route('login') }}" class="login">
+			<form method="POST" action="{{ route('login') }}" class="login">
 				{{ csrf_field() }}
 				<p>
-				  <label for="login">Логин:</label>
-				  <input type="text" name="login" id="login" value="" placeholder="name@example.com">
+				  <label for="login">E-mail:</label>
+				  <input id="login" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
 				</p>
 				<p>
 				  <label for="password">Пароль:</label>
-				  <input type="password" name="password" id="password" value="">
+				  <input id="password" type="password" class="form-control" name="password" required>
 				</p>
 
 				<p class="login-submit">
@@ -232,7 +237,7 @@
 	<section id="register_section">
 		<div class="register_block">
 			<div class="close">&#10008;</div>
-			<form method="post" action="{{ route('register') }}" class="login" style="margin: 75px auto;">
+			<form method="POST" action="{{ route('register') }}" class="login" style="margin: 75px auto;">
 				{{ csrf_field() }}
 				<p>
 				  <label for="name">Имя:</label>
@@ -240,13 +245,8 @@
 				</p>
 				<p>
 				  <label for="email">E-Mail:</label>
-				  <input type="email" name="email" id="email" value="" placeholder="name@example.com">
+				  <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
 				</p>
-				@if ($errors->has('email'))
-                    <span class="help-block">
-                        <strong>{{ $errors->first('email') }}</strong>
-                    </span>
-                @endif
 				<p>
 				  <label for="password_reg">Пароль:</label>
 				  <input type="password" name="password" id="password_reg" value="">
@@ -277,10 +277,12 @@
 		  zoom: 11
 		});
 		}
-		var login, register;
+		var login, register, logout, profile;
 
 		login = $("#login_btn");
 		register = $("#register_btn");
+		logout = $("#logout");
+		profile = $("#profile");
 
 		login.click(function(){
 			$('.popur_bg').css('display','block');
@@ -313,6 +315,16 @@
 			$('.popur_bg').css('display','none');
 			$('.register_block').css('display','none');
 		});
+
+		logout.click(function(){
+			document.getElementById('logout-form').submit();
+		});
+
+		profile.click(function(){
+			window.location.replace("/games");
+		});
+		
+
     </script>
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBAhzPdntTNaL7AoPevRqigGBRpWB2xhzk&callback=initMap" async defer></script>
 </body>

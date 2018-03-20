@@ -10,5 +10,10 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', ['uses'=>'IndexController@index', 'as'=>'home']);
+
 Auth::routes();
+Route::get('/', ['uses'=>'IndexController@index', 'as'=>'home']);
+
+Route::get('/auth', ['uses'=>'IndexController@index', 'as'=>'home']);
+
+Route::get('/games', ['uses'=>'GameController@index', 'as'=>'games']);
