@@ -21,13 +21,13 @@ class GameController extends Controller
      * @return [type] [description]
      */
     public function index(){
-    	if(view()->exists('index'))
+    	if(view()->exists('game'))
     	{
     		$data = [
     			'title' => 'Игры'
     		];
 
-    		return view('index', $data);
+    		return view('game', $data);
     	}else abort(404);
     }
 }
