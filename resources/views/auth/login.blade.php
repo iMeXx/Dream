@@ -4,6 +4,42 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
+            <form method="POST" action="{{ route('login') }}" class="login">
+                {{ csrf_field() }}
+                <p>
+                    @if ($errors->has('password'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('password') }}</strong>
+                        </span>
+                    @endif
+                    @if ($errors->has('email'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('email') }}</strong>
+                        </span>
+                    @endif
+                    <label for="login">E-mail:</label>
+                    <input id="login" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
+                </p>
+                <p>
+                    <label for="password">Пароль:</label>
+                    <input id="password" type="password" class="form-control" name="password" required>
+                </p>
+                <p>
+                    <label for="checkbox1">Запомнить</label>
+                    <input id="checkbox1" type="checkbox" class="form-control" name="remember" {{ old('remember') ? 'checked' : '' }}> 
+                </p>
+                <p class="login-submit">
+                    <button type="submit" class="login-button">Войти</button>
+                </p>
+                <p class="forgot-password"><a href="/">Забыл пароль?</a></p>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- <div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">Login</div>
 
@@ -65,5 +101,5 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 @endsection

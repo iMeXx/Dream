@@ -12,6 +12,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('/css/MyStyle.css') }}" rel="stylesheet">
 
     <!-- Scripts -->
     <script>
@@ -20,7 +21,7 @@
         ]) !!};
     </script>
 </head>
-<body>
+<body style="background: #373737 url(../img/bg.png) 0 0 repeat;">
     <div id="app">
         <nav class="navbar navbar-default navbar-static-top">
             <div class="container">
