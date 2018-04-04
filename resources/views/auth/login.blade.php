@@ -25,8 +25,9 @@
                     <input id="password" type="password" class="form-control" name="password" required>
                 </p>
                 <p>
-                    <label for="checkbox1">Запомнить</label>
-                    <input id="checkbox1" type="checkbox" class="form-control" name="remember" {{ old('remember') ? 'checked' : '' }}> 
+                    <label class="form-check-label" for="checkbox"></label>
+                    <input type="checkbox" class="filled-in form-check-input" name="remember" id="checkbox" {{ old('remember') ? 'checked' : '' }}>
+                    <span>Запомнить</span>
                 </p>
                 <p class="login-submit">
                     <button type="submit" class="login-button">Войти</button>
