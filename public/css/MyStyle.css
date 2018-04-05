@@ -286,3 +286,7 @@ label {
   background: #ffffff8f;
   padding: 20px;    
 }
+
+.myBg{
+  background: #373737 url(../img/bg.png) 0 0 repeat;
+}
