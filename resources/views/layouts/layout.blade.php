@@ -321,7 +321,7 @@
 		});
 
 		profile.click(function(){
-			window.location.replace("/games");
+			window.location.replace("/pca");
 		});
 		
 
