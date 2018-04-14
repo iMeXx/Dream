@@ -13,7 +13,11 @@
 
 Auth::routes();
 Route::get('/', ['uses'=>'IndexController@index', 'as'=>'home']);
-
 Route::get('/auth', ['uses'=>'IndexController@index', 'as'=>'home']);
 
-Route::get('/games', ['uses'=>'GameController@index', 'as'=>'games']);
+Route::prefix('pca')->group(function () {
+    Route::get('/', ['uses'=>'PCAController@index', 'as'=>'pca']);
+    Route::get('/games', ['uses'=>'GameController@index', 'as'=>'games']);
+});
+
+

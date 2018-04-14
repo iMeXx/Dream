@@ -72,45 +72,41 @@
                 </header>
                 <ul class="sidebar-navbar">
                     <li>
-                        <a href="{{ url('/games') }}">
+                        <a href="{{ url('/pca') }}">
                             <i class="fa fa-globe"></i>
                             <span>Главная</span>
                         </a>
                     </li>
                     <li>
-                        <a href="{{ url('/games') }}">
+                        <a href="{{ url('/') }}">
                             <i class="fa fa-cogs"></i>
                             Профиль
                         </a>
                     </li>
                     <li>
-                        <a href="{{ url('/games') }}">
+                        <a href="{{ url('/') }}">
                             <i class="fa fa-envelope"></i>
                             Сообщения
                         </a>
                     </li>
                     <li>
-                        <a href="{{ url('/games') }}">
+                        <a href="{{ url('/') }}">
                             <i class="fa fa-globe"></i>
                             События
                         </a>
                     </li>
                     <li>
-                        <a href="{{ url('/games') }}">
+                        <a href="{{ url('/') }}">
                             <i class="fa fa-users"></i>
                             Друзья
                         </a>
                     </li>
                     <li>
-                        <a href="{{ url('/games') }}">
+                        <a href="{{ url('/pca/games') }}">
                             <i class="fa fa-gamepad"></i>
                             Игры
                         </a>
                     </li>
-
-
-
-                    
                 </ul>
             </div>
         </div>
@@ -133,8 +129,12 @@
             <footer class="footer text-center">
                 <div class="container">
                     <div class="row">
-                        11111111111111111111111111111111
-                        00000000000000000000000000000000
+                       <br>
+                       <br>
+                       <br>
+                       <br>
+                       <br>
+                       <br>
                     </div>
                 </div>
             </footer>
